@@ -1,99 +1,31 @@
-<!DOCTYPE html>
+const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      font-size: 12pt;
-      margin: 60px;
-      color: #000;
-    }
-    h1 {
-      text-align: center;
-      font-size: 16pt;
-      text-transform: uppercase;
-      margin-bottom: 30px;
-    }
-    p {
-      margin: 6px 0;
-      line-height: 1.6;
-    }
-    .section-title {
-      font-weight: bold;
-      margin-top: 20px;
-      text-transform: uppercase;
-    }
-    .signature-block {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 60px;
-    }
-    .signature-line {
-      width: 45%;
-    }
-    .signature-line hr {
-      border: 1px solid #000;
-      margin-bottom: 5px;
-    }
-    .signature-line p {
-      margin: 2px 0;
-    }
+    body { font-family: Arial, sans-serif; font-size: 12pt; margin: 60px; }
+    h1 { text-align: center; font-size: 16pt; }
+    .section-title { font-weight: bold; margin-top: 20px; }
+    .signature-block { display: flex; justify-content: space-between; margin-top: 60px; }
+    .signature-line { width: 45%; }
+    .signature-line hr { border: 1px solid #000; }
   </style>
 </head>
 <body>
-
-  <h1>Retainer Agreement</h1>
-
-  <p>This Retainer Agreement ("Agreement") is entered into on <strong>{{date_filed}}</strong>, between:</p>
-
+  <h1>RETAINER AGREEMENT</h1>
+  <p>This agreement is entered into on <strong>${$('Edit Fields').item.json.date_filed}</strong></p>
   <p><strong>Attorney:</strong> Kirby Tajanlangit, Esq.</p>
-  <p><strong>Client:</strong> {{client_full_name}}</p>
-  <p><strong>Client Address:</strong> {{client_address}}</p>
-  <p><strong>Client Phone:</strong> {{client_phone}}</p>
-  <p><strong>Client Email:</strong> {{client_email}}</p>
-  <p><strong>Case Type:</strong> {{case_type}}</p>
-  <p><strong>Case Number:</strong> {{case_number}}</p>
-
-  <br>
-
-  <p class="section-title">1. Scope of Representation</p>
-  <p>Attorney agrees to represent Client in the matter of: {{case_type}} filed at {{court_name}}.</p>
-  <p>Presiding Judge: {{judge_name}}</p>
-
-  <p class="section-title">2. Fees</p>
-  <p>Client agrees to pay a retainer fee upon signing this agreement. Payment terms shall be discussed and agreed upon separately.</p>
-
-  <p class="section-title">3. Court / Jurisdiction</p>
-  <p>This matter is filed in {{court_name}}.</p>
-
-  <p class="section-title">4. Opposing Party</p>
-  <p><strong>Opposing Party:</strong> {{opposing_party}}</p>
-  <p><strong>Opposing Party Address:</strong> {{opposing_party_address}}</p>
-  <p><strong>Opposing Counsel:</strong> {{opposing_counsel}}</p>
-
-  <p class="section-title">5. Duration</p>
-  <p>This Agreement shall remain in effect until the matter is resolved or either party terminates the agreement in writing.</p>
-
-  <p class="section-title">6. Confidentiality</p>
-  <p>Attorney agrees to maintain the confidentiality of all information shared by Client in connection with this representation.</p>
-
-  <br><br>
-
-  <div class="signature-block">
-    <div class="signature-line">
-      <hr>
-      <p><strong>Kirby Tajanlangit, Esq.</strong></p>
-      <p>Attorney</p>
-      <p>Date: {{date_filed}}</p>
-    </div>
-    <div class="signature-line">
-      <hr>
-      <p><strong>{{client_full_name}}</strong></p>
-      <p>Client</p>
-      <p>Date: {{date_filed}}</p>
-    </div>
-  </div>
-
+  <p><strong>Client:</strong> ${$('Edit Fields').item.json.client_full_name}</p>
+  <p><strong>Address:</strong> ${$('Edit Fields').item.json.client_address}</p>
+  <p><strong>Phone:</strong> ${$('Edit Fields').item.json.client_phone}</p>
+  <p><strong>Email:</strong> ${$('Edit Fields').item.json.client_email}</p>
+  <p><strong>Case Type:</strong> ${$('Edit Fields').item.json.case_type}</p>
+  <p><strong>Case Number:</strong> ${$('Edit Fields').item.json.case_number}</p>
+  <p><strong>Court:</strong> ${$('Edit Fields').item.json.court_name}</p>
+  <p><strong>Judge:</strong> ${$('Edit Fields').item.json.judge_name}</p>
+  <p><strong>Opposing Party:</strong> ${$('Edit Fields').item.json.opposing_party}</p>
+  <p><strong>Opposing Counsel:</strong> ${$('Edit Fields').item.json.opposing_counsel}</p>
 </body>
-</html>
+</html>`;
+
+return [{ json: { html } }];
